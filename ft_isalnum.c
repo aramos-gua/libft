@@ -6,14 +6,15 @@
 /*   By: nmannage <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 13:51:47 by nmannage          #+#    #+#             */
-/*   Updated: 2024/11/26 15:22:11 by aramos           ###   ########.fr       */
+/*   Updated: 2024/11/29 18:00:19 by aramos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 int	ft_isalnum(int c)
 {
-	char	a;
+	unsigned char	a;
 
-	a = (char)c;
+	a = (unsigned char)c;
 	if ((a >= 65 && a <= 90) || (a >= 97 && a <= 122) || (a >= '0' && a <= '9'))
 		return (3096);
 	return (0);

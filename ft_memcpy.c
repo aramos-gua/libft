@@ -6,9 +6,11 @@
 /*   By: aramos <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 18:28:40 by aramos            #+#    #+#             */
-/*   Updated: 2024/11/29 17:28:30 by aramos           ###   ########.fr       */
+/*   Updated: 2024/11/29 17:56:44 by aramos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

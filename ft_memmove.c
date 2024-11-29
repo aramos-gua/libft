@@ -6,7 +6,7 @@
 /*   By: aramos <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 19:07:50 by aramos            #+#    #+#             */
-/*   Updated: 2024/11/28 17:30:20 by aramos           ###   ########.fr       */
+/*   Updated: 2024/11/29 17:44:04 by aramos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 int	main(void)
 {
-	char	src[50] = "I think I understand it now!"
-	char	dest[50] = "Are you sure, brosky?"
+	char	src[100] = "abcdefghi"
 
-	memmove(dest, src, 8)
+	memmove(src + 3, src, 4);
 	printf("%s", )
 }

@@ -6,9 +6,11 @@
 /*   By: aramos <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 17:29:26 by aramos            #+#    #+#             */
-/*   Updated: 2024/11/29 17:29:47 by aramos           ###   ########.fr       */
+/*   Updated: 2024/11/29 17:56:01 by aramos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <string.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
