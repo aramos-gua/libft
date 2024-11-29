@@ -6,9 +6,12 @@
 /*   By: aramos <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 17:46:05 by aramos            #+#    #+#             */
-/*   Updated: 2024/11/27 16:37:22 by aramos           ###   ########.fr       */
+/*   Updated: 2024/11/28 18:51:06 by aramos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include<stddef.h>
+
 void	*ft_memset(void *s, int c, size_t n)
 {
 	char	replace_by;
