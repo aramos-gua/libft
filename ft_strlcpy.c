@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aramos <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/27 18:28:40 by aramos            #+#    #+#             */
-/*   Updated: 2024/11/29 19:08:22 by aramos           ###   ########.fr       */
+/*   Created: 2024/11/30 10:49:27 by aramos            #+#    #+#             */
+/*   Updated: 2024/11/30 12:48:18 by aramos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	size_t	i;
-	void	*ptr;
+	unsigned int	i;
 
 	i = 0;
-	ptr = dest;
-	while (i++ < n)
-		*(unsigned char *)dest++ = *(unsigned const char *)src++;
-	return (ptr);
+	if (size == 0)
+		return (ft_strlen(src));
+	while (i < size - 1 && src[i] != '\0')
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (ft_strlen(src));
 }
-//
-//int	main(void)
-//{
-//	char	src[50] = "HelloTrying to understand this now, oh my dog!";
-//	char	dest[50] = "bbbbbbbbbb";
-//
-//	ft_memcpy(dest, src, 5);
-//	printf("%s", dest);
-//	return (0);
-//}
