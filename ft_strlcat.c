@@ -6,7 +6,7 @@
 /*   By: aramos <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 12:48:43 by aramos            #+#    #+#             */
-/*   Updated: 2024/11/30 14:29:13 by aramos           ###   ########.fr       */
+/*   Updated: 2024/12/01 17:21:40 by aramos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,31 +15,35 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int	i;
-	size_t	j;
-	int	len_dst;
+	size_t	i;
+	size_t j;
+	size_t	len_dst;
+	size_t len_src;
 
-	i = 0;
-	j = size - 1;
 	len_dst = ft_strlen(dst);
-	if (sizeof(dst == 0))
-		return (len_dst + strlen(src));
-	while (src[i] != '\0' && dst[i] != '\0')
+	len_src = ft_strlen(src);
+	i = 0;
+	j = len_dst;
+	if (size == 0)
+		return (len_src);
+	if (size <= len_dst)
+		return (size + len_src);
+	while (src[i] != '\0' && j < size - 1)
 	{
 		dst [j] = src[i];
 		i++;
 		j++;
 	}
 	dst[j] = '\0';
-	return (len_dst + ft_strlen(src));
+	return (len_dst + len_src);
 }
 //
 //int	main(void)
 //{
-//	char	dst[50] = "Hola";
-//	char	src[50] = " Como tu estas?";
+//	char	dst[6] = "Hello.";
+//	char	src[11] = " Cat";
 //
-//	ft_strlcat(dst, src, 5);
+//	printf("\n%zu\n",  ft_strlcat(dst, src, 4));
 //	printf("%s", dst);
 //	return (0);
 //}
