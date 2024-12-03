@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aramos <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/01 17:25:32 by aramos            #+#    #+#             */
-/*   Updated: 2024/12/03 11:16:28 by aramos           ###   ########.fr       */
+/*   Created: 2024/12/02 19:30:26 by aramos            #+#    #+#             */
+/*   Updated: 2024/12/03 11:14:22 by aramos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
+#include "libft.h"
 
-int	ft_toupper(int c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	if (c >= 97 && c <= 122)
-		return (c - 32);
-	return (c);
+	while (n-- > 0)
+	{
+		if (*(const unsigned char *)s != (unsigned char)c)
+			s++;
+		if (*(const unsigned char *)s == (unsigned char)c)
+			return ((void *)s);
+	}
+	return (NULL);
 }
 //
 //int	main(void)
 //{
-//	printf("%c", (char)ft_toupper(56));
+//	char	s[] = {0, 1, 2 ,3 ,4 ,5};
+//	//int	i;
+//
+//	//for (i = 0; i < 5; i++)
+//	//	printf("%d\n", *(int *)memchr(s, 52, 5));
+//	printf("%p\n", s);
+//	printf("%p", ft_memchr(s, 2, 3));
 //	return (0);
 //}
