@@ -6,7 +6,7 @@
 /*   By: aramos <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 17:52:09 by aramos            #+#    #+#             */
-/*   Updated: 2024/12/04 20:02:36 by aramos           ###   ########.fr       */
+/*   Updated: 2024/12/05 17:12:00 by aramos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_atoi(const char *nptr)
 		if (*(nptr + 1) >= '0' && *(nptr + 1) <= '9')
 		{
 			nptr++;
-			break;
+			break ;
 		}
 		return (0);
 	}
@@ -41,9 +41,9 @@ int	ft_atoi(const char *nptr)
 //
 //int	main(void)
 //{
-//	const char	my_numbers [] = "+-5";
+//	const char	my_numbers [] = "2147483647";
 //
-//	printf("Original: %d\n", atoi(my_numbers));
-//	printf("Mine: %d ",ft_atoi(my_numbers));
+//	printf("Original:%d\n", atoi(my_numbers));
+//	printf("Mine:%d\n",ft_atoi(my_numbers));
 //	return (0);
 //}	
