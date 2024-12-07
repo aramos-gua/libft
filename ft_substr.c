@@ -1,40 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aramos <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/02 17:56:49 by aramos            #+#    #+#             */
-/*   Updated: 2024/12/07 14:59:14 by aramos           ###   ########.fr       */
+/*   Created: 2024/12/07 15:02:47 by aramos            #+#    #+#             */
+/*   Updated: 2024/12/07 16:00:34 by aramos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 //#include <stdio.h>
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
+	char		*ptr;
+	char		*start_ptr;
+	char const	*new_s;
 
-	i = 0;
-	if (n == 0)
-		return (0);
-	while (i < (n - 1) && s1[i] != '\0' && s2[i] != '\0')
+	ptr = (char *) malloc(len + 1);
+	if (ptr == NULL || start >= ft_strlen(s))
+		return (NULL);
+	new_s = s + start;
+	start_ptr = ptr;
+	while (len > 0 && *new_s != '\0')
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
-		i++;
+		*ptr = *new_s;
+		ptr++;
+		new_s++;
+		len--;
 	}
-	return (s1[i] - s2[i]);
+	*ptr = '\0';
+	return (start_ptr);
 }
 //
 //int	main(void)
 //{
-//	const char	s1[] = "1234";
-//	const char	s2[] = "1235";
+//	char const	s[] = "Mashmhellos";
 //
-//	printf("Mine: %d\n", ft_strncmp(s1, s2, 3));
-//	printf("Original: %d", strncmp(s1, s2, 3));
+//	printf("%s", ft_substr(s, 5, 5));
 //	return (0);
 //}
