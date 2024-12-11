@@ -6,13 +6,13 @@
 /*   By: aramos <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 11:29:19 by aramos            #+#    #+#             */
-/*   Updated: 2024/12/10 15:35:23 by aramos           ###   ########.fr       */
+/*   Updated: 2024/12/11 19:34:13 by aramos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	word_c(char const *s, char c);
+static size_t	word_c(char const *s, char c);
 
 char	**ft_split(char const *s, char c)
 {
@@ -42,7 +42,7 @@ char	**ft_split(char const *s, char c)
 	return (array);
 }
 
-size_t	word_c(char const *s, char c)
+static size_t	word_c(char const *s, char c)
 {
 	size_t	words;
 
