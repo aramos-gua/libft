@@ -6,52 +6,26 @@
 /*   By: aramos <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 09:14:43 by aramos            #+#    #+#             */
-/*   Updated: 2024/12/11 18:38:54 by aramos           ###   ########.fr       */
+/*   Updated: 2024/12/10 09:58:58 by aramos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
-#include "libft.h"
-
-static int	c_in_str(char c, char const *set)
-{
-	while (*set != '\0')
-	{
-		if (*set == c)
-			return (1);
-		set++;
-	}
-	return (0);
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char const	*start;
-	char const	*end;
-	char		*trimmed;
-	size_t		len;
+	char	*s2;
+	char	*ptr_2;
+	int		len_set;
+	int		len_s1;
 
-	if (!s1 || !set)
+	if (s1 == NULL)
 		return (NULL);
-	start = s1;
-	while (*start && c_in_str(*start, set))
-		start++;
-	end = s1 + ft_strlen(s1);
-	while (end > start && c_in_str(*(end -1), set))
-		end--;
-	len = end - start;
-	trimmed = ft_substr(start, 0, len);
-	if (!trimmed)
-		return (NULL);
-	trimmed[len] = '\0';
-	return (trimmed);
+	len_s1 = ft_strlen(s1);
+	len_set = strlen(set);
+	ft_strnstr(s1, set, len_s1);
+	s2 = (char *) malloc();
 }
-//
-//int	main(void)
-//{
-//	char const	s1[] = "aaaeiouuohella@ouioa";
-//	char const	set[] = "aeiou";
-//
-//	printf("%s", ft_strtrim(s1, set));
-//	return (0);
-//}
+
+int	main(void)
+{
+	
+}
