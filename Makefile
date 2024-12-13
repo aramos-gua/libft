@@ -24,9 +24,12 @@ SRCS = \
 	ft_strdup.c\
 	ft_substr.c\
 	ft_strjoin.c\
-	ft_strtrim.c\
 	ft_split.c\
-	ft_itoa.c
+	ft_itoa.c\
+	ft_strmapi.c\
+	ft_striteri.c\
+	ft_putchar_fd.c\
+	ft_putstr_fd.c
 OBJS = $(SRCS:.c=.o)
 
 CC = gcc

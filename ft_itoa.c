@@ -6,7 +6,7 @@
 /*   By: aramos <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 18:52:49 by aramos            #+#    #+#             */
-/*   Updated: 2024/12/11 19:48:14 by aramos           ###   ########.fr       */
+/*   Updated: 2024/12/12 20:34:57 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ int	num_len(int n)
 	int	len;
 
 	len = 0;
+	if (n <= 0)
+		len++;
 	if (n < 0)
-		n *= -1;
+		n = -(long)n;
 	while (n > 0)
 	{
 		n /= 10;
@@ -30,39 +32,38 @@ int	num_len(int n)
 
 char	*ft_itoa(int n)
 {
+	long 	num;
 	char	*result;
-	int		flag;
-	int		len;
+	int	len;
 
-	if (!n)
-		return (NULL);
+	num = n;
 	len = num_len(n);
-	if (n < 0)
-	{
-		flag = 1;
-		len += 1;
-		n *= -1;
-	}
 	result = (char *) malloc((len + 1) * sizeof(char));
 	if (!result)
 		return (NULL);
+	if (n == -2147483648)
+		return ("-2147483648");
 	result[len] = '\0';
-	while (n > 0)
+	if (n < 0)
+		num = -num;
+	if (n == 0)
+		result[0] = '0';
+	while (num > 0)
 	{
-		result[len - 1] = (n % 10) + 48;
-		n /= 10;
+		result[len - 1] = (num % 10) + '0';
+		num /= 10;
 		len--;
 	}
-	if (flag == 1)
-		result [len] = '-';
+	if (n < 0)
+		result[0] = '-';
 	return (result);
 }
-
-int	main(void)
-{
-	int	number;
-
-	number = -58;
-	printf("%s", ft_itoa(number));
-	return (0);
-}
+//
+//int	main(void)
+//{
+//	int	number;
+//
+//	number = -2147483648;
+//	printf("%s\n", ft_itoa(number));
+//	return (0);
+//}
