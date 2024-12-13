@@ -6,7 +6,7 @@
 /*   By: aramos <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 18:52:49 by aramos            #+#    #+#             */
-/*   Updated: 2024/12/12 20:34:57 by alex             ###   ########.fr       */
+/*   Updated: 2024/12/13 18:29:41 by aramos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ int	num_len(int n)
 
 char	*ft_itoa(int n)
 {
-	long 	num;
+	long	num;
 	char	*result;
-	int	len;
+	int		len;
 
 	num = n;
 	len = num_len(n);
