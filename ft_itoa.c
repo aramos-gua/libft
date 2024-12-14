@@ -6,22 +6,27 @@
 /*   By: aramos <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 18:52:49 by aramos            #+#    #+#             */
-/*   Updated: 2024/12/13 18:29:41 by aramos           ###   ########.fr       */
+/*   Updated: 2024/12/14 14:05:09 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-int	num_len(int n)
+char	*maxint_n(void);
+
+static int	num_len(int n)
 {
 	int	len;
 
 	len = 0;
-	if (n <= 0)
-		len++;
+	if (n == 0)
+		return (1);
 	if (n < 0)
-		n = -(long)n;
+	{
+		len++;
+		n = -n;
+	}
 	while (n > 0)
 	{
 		n /= 10;
@@ -36,13 +41,13 @@ char	*ft_itoa(int n)
 	char	*result;
 	int		len;
 
+	if (n == -2147483648)
+		return (maxint_n());
 	num = n;
 	len = num_len(n);
 	result = (char *) malloc((len + 1) * sizeof(char));
 	if (!result)
 		return (NULL);
-	if (n == -2147483648)
-		return ("-2147483648");
 	result[len] = '\0';
 	if (n < 0)
 		num = -num;
@@ -56,6 +61,17 @@ char	*ft_itoa(int n)
 	}
 	if (n < 0)
 		result[0] = '-';
+	return (result);
+}
+
+char	*maxint_n(void)
+{
+	char	*result;
+
+	result = (char *) malloc(12 * sizeof(char));
+	if (!result)
+		return (NULL);
+	ft_strlcpy(result, "-2147483648", 12);
 	return (result);
 }
 //

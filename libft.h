@@ -6,12 +6,14 @@
 /*   By: aramos <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 17:29:26 by aramos            #+#    #+#             */
-/*   Updated: 2024/12/13 18:30:55 by aramos           ###   ########.fr       */
+/*   Updated: 2024/12/14 11:50:38 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdlib.h>
+#include <stdint.h>
+#include <limits.h>
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
@@ -46,4 +48,4 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
-//void	ft_putnbr_fd(int n, int fd);
+void	ft_putnbr_fd(int n, int fd);

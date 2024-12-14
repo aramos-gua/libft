@@ -6,14 +6,26 @@
 /*   By: alex <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 14:34:34 by alex              #+#    #+#             */
-/*   Updated: 2024/12/12 14:37:58 by alex             ###   ########.fr       */
+/*   Updated: 2024/12/14 14:27:57 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
+#include <unistd.h>
+//#include <stdio.h>
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	ft_putchar_fd(ft_itoa(n), fd);
+	char	*str;
+
+	str = ft_itoa(n);
+	if (!str)
+		return ;
+	write(fd, str, ft_strlen(str));
+	free (str);
 }
+//
+//int	main(void)
+//{
+//	ft_putnbr_fd(-2147483648LL, 1);
+//}
