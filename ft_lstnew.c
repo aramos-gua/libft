@@ -6,11 +6,12 @@
 /*   By: alex <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 22:16:01 by alex              #+#    #+#             */
-/*   Updated: 2024/12/15 23:11:29 by alex             ###   ########.fr       */
+/*   Updated: 2024/12/16 18:31:42 by aramos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+//#include <stdio.h>
 
 t_list	*ft_lstnew(void *content)
 {
@@ -19,13 +20,14 @@ t_list	*ft_lstnew(void *content)
 	node = (t_list *)malloc(sizeof(t_list));
 	if (!node)
 		return (NULL);
-	s_list.content = content;
-	s_list.next = NULL;
-		return (node);
+	node -> content = content;
+	node -> next = NULL;
+	return (node);
 }
-
-int	main(void)
-{
-
-	return (0);
-}
+//
+//int	main(void)
+//{
+//	printf("%s", (char *)ft_lstnew("423")->content);
+//	printf("%p", (char *)ft_lstnew("423")->next);
+//	return (0);
+//}
