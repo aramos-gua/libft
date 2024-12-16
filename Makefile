@@ -33,7 +33,11 @@ SRCS = \
 	ft_putstr_fd.c\
 	ft_putendl_fd.c\
 	ft_putnbr_fd.c
+BSRCS = ft_lstnew.c\
+
 OBJS = $(SRCS:.c=.o)
+
+BOBJS = $(BSRCS:.c=.o)
 
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra -g3
@@ -54,6 +58,13 @@ fclean: clean
 re: fclean all
 
 all: program
+
+bonus: libft.a ${BOBJS}
+	@echo "Adding bonus functions to library..."
+	ar rcs libft.a ${BOBJS}
+
+clean_bonus:
+	rm -f ${BOBJS}
 
 program: $(OBJS) libft.a
 	$(CC) $(CFLAGS) -o program $(OBJS) libft.a

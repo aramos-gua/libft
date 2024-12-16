@@ -6,7 +6,7 @@
 /*   By: aramos <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 17:29:26 by aramos            #+#    #+#             */
-/*   Updated: 2024/12/14 11:50:38 by alex             ###   ########.fr       */
+/*   Updated: 2024/12/15 22:15:44 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <stdint.h>
 #include <limits.h>
 
+//Mandatory Part
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -49,3 +50,13 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
+//Bonus Part
+
+typedef struct	s_list
+{
+	void		*content;
+	struct s_list 	*next;
+}			t_list;
+
+t_list	*ft_lstnew(void *content);
