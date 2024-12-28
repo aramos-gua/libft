@@ -6,7 +6,7 @@
 /*   By: alex <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/18 19:14:56 by alex              #+#    #+#             */
-/*   Updated: 2024/12/23 10:08:45 by alex             ###   ########.fr       */
+/*   Updated: 2024/12/28 23:36:27 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	while (temp -> next != NULL)
 		temp = temp -> next;
 	temp -> next = new;
-	new -> next = NULL;
 }
 //
 //int	main(void)
