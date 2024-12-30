@@ -6,7 +6,7 @@
 /*   By: aramos <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 17:29:26 by aramos            #+#    #+#             */
-/*   Updated: 2024/12/28 21:48:50 by alex             ###   ########.fr       */
+/*   Updated: 2024/12/30 09:42:31 by alex             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,10 @@ void	ft_putnbr_fd(int n, int fd);
 
 //Bonus Part
 
-typedef struct	s_list
+typedef struct s_list
 {
-	void		*content;
-	struct s_list 	*next;
+	void			*content;
+	struct s_list	*next;
 }			t_list;
 
 t_list	*ft_lstnew(void *content);
