@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
 #include "libft.h"
 
 static int	c_in_str(char c, char const *set)
@@ -46,7 +45,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	trimmed[len] = '\0';
 	return (trimmed);
 }
-//
+
 //int	main(void)
 //{
 //	char const	s1[] = "aaaeiouuohella@ouioa";

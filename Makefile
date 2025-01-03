@@ -51,7 +51,9 @@ BOBJS = $(BSRCS:.c=.o)
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra -g3
 
-libft.a: $(OBJS)
+NAME = libft.a
+
+$(NAME): $(OBJS)
 	@echo "Creating Library..."
 	ar rcs $@ $(OBJS)
 

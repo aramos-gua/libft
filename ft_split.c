@@ -12,7 +12,24 @@
 
 #include "libft.h"
 
-size_t	word_c(char const *s, char c);
+static size_t	word_c(char const *s, char c)
+{
+	size_t	words;
+
+	words = 0;
+	while (*s != '\0')
+	{
+		while (*s == c && *s != '\0')
+			s++;
+		if (*s != c && *s != '\0')
+		{
+			words++;
+			while (*s != c && *s != '\0')
+				s++;
+		}
+	}
+	return (words);
+}
 
 char	**ft_split(char const *s, char c)
 {
@@ -42,24 +59,6 @@ char	**ft_split(char const *s, char c)
 	return (array);
 }
 
-size_t	word_c(char const *s, char c)
-{
-	size_t	words;
-
-	words = 0;
-	while (*s != '\0')
-	{
-		while (*s == c && *s != '\0')
-			s++;
-		if (*s != c && *s != '\0')
-		{
-			words++;
-			while (*s != c && *s != '\0')
-				s++;
-		}
-	}
-	return (words);
-}
 //
 //int	main(void)
 //{

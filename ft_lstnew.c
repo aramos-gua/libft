@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 
 t_list	*ft_lstnew(void *content)
 {
@@ -24,7 +23,7 @@ t_list	*ft_lstnew(void *content)
 	node -> next = NULL;
 	return (node);
 }
-//
+
 //int	main(void)
 //{
 //	printf("%s", (char *)ft_lstnew("423")->content);

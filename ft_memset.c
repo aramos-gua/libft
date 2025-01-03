@@ -27,7 +27,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (ptr);
 }
-//
+
 //int	main(void)
 //{
 //	char str[50] = "Hello, I am understanding the memset function";

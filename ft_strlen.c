@@ -21,7 +21,7 @@ size_t	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
-//
+
 //int	main(void)
 //{
 //	printf("%lu", ft_strlen("H\\0"));

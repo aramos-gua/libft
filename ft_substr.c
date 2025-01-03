@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
 #include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
@@ -38,7 +36,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	*ptr = '\0';
 	return (start_ptr);
 }
-//
+
 //int	main(void)
 //{
 //	char const	s[] = "hellohellohello";

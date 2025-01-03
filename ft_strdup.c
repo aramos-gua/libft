@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 
 char	*ft_strdup(const char *s)
 {
@@ -27,7 +26,7 @@ char	*ft_strdup(const char *s)
 	ft_strlcpy(ptr, s, size_s);
 	return (ptr);
 }
-//
+
 //int	main(void)
 //{
 //	char	*s = ft_strdup((char *) "coucou");

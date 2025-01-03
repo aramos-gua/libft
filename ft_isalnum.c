@@ -16,7 +16,7 @@ int	ft_isalnum(int c)
 
 	a = (unsigned char)c;
 	if ((a >= 65 && a <= 90) || (a >= 97 && a <= 122) || (a >= '0' && a <= '9'))
-		return (3096);
+		return (1);
 	return (0);
 }
 //

@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-//#include <stdio.h>
 
 int	ft_lstsize(t_list *lst)
 {
@@ -25,7 +24,7 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (size);
 }
-//
+
 //int	main(void)
 //{
 //	t_list	*node;

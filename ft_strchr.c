@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
 #include <stddef.h>
 
 char	*ft_strchr(const char *s, int c)
@@ -27,7 +26,7 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)s);
 	return (NULL);
 }
-//
+
 //int	main(void)
 //{
 //	char	s[] = "\0abcdef";

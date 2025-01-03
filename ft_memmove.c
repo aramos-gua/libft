@@ -28,7 +28,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		ft_memcpy(dest, src, n);
 	return (ptr);
 }
-//
+
 //int	main(void)
 //{
 //	char	src[100] = "abcd"

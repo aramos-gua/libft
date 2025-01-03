@@ -23,7 +23,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 		*(unsigned char *)dest++ = *(unsigned const char *)src++;
 	return (ptr);
 }
-//
+
 //int	main(void)
 //{
 //	char	src[50] = "HelloTrying to understand this now, oh my dog!";
