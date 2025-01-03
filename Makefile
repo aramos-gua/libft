@@ -1,4 +1,4 @@
-SRCS = \
+SRC = \
 	ft_isalpha.c\
 	ft_isdigit.c\
 	ft_isalnum.c\
@@ -34,7 +34,7 @@ SRCS = \
 	ft_putendl_fd.c\
 	ft_putnbr_fd.c
 
-BSRCS = ft_lstnew.c\
+BSRC = ft_lstnew.c\
 		ft_lstadd_front.c\
 		ft_lstsize.c\
 		ft_lstlast.c\
@@ -44,38 +44,24 @@ BSRCS = ft_lstnew.c\
 		ft_lstiter.c\
 		ft_lstmap.c
 
-OBJS = $(SRCS:.c=.o)
-
-BOBJS = $(BSRCS:.c=.o)
-
-CC = gcc
-CFLAGS = -Wall -Werror -Wextra -g3
-
+OBJ = $(SRC:.c=.o)
+BOBJ = $(BSRC:.c=.o)
+CC = cc
+CFLAGS = -Wall -Werror -Wextra -I.
 NAME = libft.a
 
-$(NAME): $(OBJS)
-	@echo "Creating Library..."
-	ar rcs $@ $(OBJS)
+$(NAME): $(OBJ)
+	ar rcs $(NAME) $(OBJ)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+bonus: $(NAME) $(OBJ) $(BOBJ)
+	ar $(NAME) $(BOBJ)
+
+all: $(NAME)
 
 clean:
-	rm -f $(OBJS) libft.a
+	rm -f $(OBJ) $(BOBJ)
 
 fclean: clean
-	rm -f program
+	rm -f $(NAME)
 
 re: fclean all
-
-all: program
-
-bonus: libft.a ${BOBJS}
-	@echo "Adding bonus functions to library..."
-	ar rcs libft.a ${BOBJS}
-
-clean_bonus:
-	rm -f ${BOBJS}
-
-program: $(OBJS) libft.a
-	$(CC) $(CFLAGS) -o program $(OBJS) libft.a

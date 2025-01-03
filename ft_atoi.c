@@ -6,7 +6,7 @@
 /*   By: aramos <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 17:52:09 by aramos            #+#    #+#             */
-/*   Updated: 2024/12/05 17:12:00 by aramos           ###   ########.fr       */
+/*   Updated: 2025/01/03 17:28:38 by aramos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ int	ft_atoi(const char *nptr)
 		num = num * 10 + (*nptr++ - '0');
 	return (num * sign);
 }
+
+//#include <stdio.h>
 //
 //int	main(void)
 //{
