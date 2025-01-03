@@ -54,7 +54,7 @@ $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
 bonus: $(NAME) $(OBJ) $(BOBJ)
-	ar $(NAME) $(BOBJ)
+	ar rcs $(NAME) $(BOBJ)
 
 all: $(NAME)
 
