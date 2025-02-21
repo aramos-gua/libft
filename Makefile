@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: aramos <alejandro.ramos.gua@gmail.com>     +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/02/21 13:57:49 by aramos            #+#    #+#              #
-#    Updated: 2025/02/21 13:57:51 by aramos           ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 SRC = \
 	ft_isalpha.c\
 	ft_isdigit.c\
@@ -36,6 +24,9 @@ SRC = \
 	ft_strdup.c\
 	ft_substr.c\
 	ft_itoa.c\
+	ft_hxtoa.c\
+	ft_printf_itoa.c\
+	ft_printf_utoa.c\
 	ft_strjoin.c\
 	ft_strtrim.c\
 	ft_split.c\
@@ -45,6 +36,8 @@ SRC = \
 	ft_putstr_fd.c\
 	ft_putendl_fd.c\
 	ft_putnbr_fd.c\
+	ft_putunbr_fd.c\
+	ft_print_memory.c\
 	ft_lstnew.c\
 	ft_lstadd_front.c\
 	ft_lstsize.c\
@@ -57,7 +50,7 @@ SRC = \
 
 OBJ = $(SRC:.c=.o)
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -fPIC
 NAME = libft.a
 
 $(NAME): $(OBJ)
@@ -65,6 +58,7 @@ $(NAME): $(OBJ)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
+
 all: $(NAME)
 
 clean:

@@ -5,16 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aramos <alejandro.ramos.gua@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/21 13:50:31 by aramos            #+#    #+#             */
-/*   Updated: 2025/02/21 13:50:42 by aramos           ###   ########.fr       */
+/*   Created: 2025/02/21 12:56:11 by aramos            #+#    #+#             */
+/*   Updated: 2025/02/21 12:56:12 by aramos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*maxint_n(void);
-
-static int	num_len(int n)
+static int	num_len(long n)
 {
 	int	len;
 
@@ -40,10 +38,8 @@ char	*ft_itoa(int n)
 	char	*result;
 	int		len;
 
-	if (n == -2147483648)
-		return (maxint_n());
-	num = n;
-	len = num_len(n);
+	num = (long)n;
+	len = num_len(num);
 	result = (char *) malloc((len + 1) * sizeof(char));
 	if (!result)
 		return (NULL);
@@ -51,28 +47,18 @@ char	*ft_itoa(int n)
 	if (n < 0)
 		num = -num;
 	if (n == 0)
-		result[0] = '0';
+		result[--len] = '0';
 	while (num > 0)
 	{
-		result[len - 1] = (num % 10) + '0';
+		result[--len] = (num % 10) + '0';
 		num /= 10;
-		len--;
 	}
 	if (n < 0)
 		result[0] = '-';
 	return (result);
 }
-
-char	*maxint_n(void)
-{
-	char	*result;
-
-	result = (char *) malloc(12 * sizeof(char));
-	if (!result)
-		return (NULL);
-	ft_strlcpy(result, "-2147483648", 12);
-	return (result);
-}
+//
+//#include <stdio.h>
 //
 //int	main(void)
 //{

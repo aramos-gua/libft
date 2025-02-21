@@ -22,6 +22,6 @@ int	ft_print_memory(void *addr)
 	if (addr == NULL)
 		return (ft_putstr_fd(("(nil)"), 1));
 	counter += ft_putstr_fd("0x", 1);
-	counter += ft_print_hex_normal(address_in_dec, 0);
+	counter += ft_print_hex(address_in_dec, 0);
 	return (counter);
 }
