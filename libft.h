@@ -73,6 +73,7 @@ int		ft_putnbr_fd(int n, int fd);
 int		ft_putunbr_fd(unsigned int n, int fd);
 int		ft_print_memory(void *addr);
 int		ft_print_hex(unsigned long number, int upp);
+int		ft_printf(const char *str, ...);
 
 // Linked lists
 t_list	*ft_lstnew(void *content);

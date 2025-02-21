@@ -46,19 +46,28 @@ SRC = \
 	ft_lstdelone.c\
 	ft_lstclear.c\
 	ft_lstiter.c\
-	ft_lstmap.c
+	ft_lstmap.c\
+	ft_printf/ft_printf.c\
+	ft_printf/parsing.c\
+	ft_printf/apply_specifiers.c\
+	ft_printf/ft_printf_c_s_u.c\
+	ft_printf/ft_printf_d_i.c\
+	ft_printf/ft_printf_x_p.c
 
 OBJ = $(SRC:.c=.o)
 CC = cc
 CFLAGS = -Wall -Werror -Wextra -fPIC
 NAME = libft.a
 
+# Compile libft
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
+	@rm *.o
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
+# Targets
 all: $(NAME)
 
 clean:
