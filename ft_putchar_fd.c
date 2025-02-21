@@ -5,15 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aramos <alejandro.ramos.gua@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/21 12:58:52 by aramos            #+#    #+#             */
-/*   Updated: 2025/02/21 12:58:53 by aramos           ###   ########.fr       */
+/*   Created: 2025/02/21 13:50:31 by aramos            #+#    #+#             */
+/*   Updated: 2025/02/21 13:50:42 by aramos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
-	return (1);
 }
