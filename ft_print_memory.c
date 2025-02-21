@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_print_memory.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aramos <alejandro.ramos.gua@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/21 12:55:43 by aramos            #+#    #+#             */
-/*   Updated: 2025/02/21 12:55:45 by aramos           ###   ########.fr       */
+/*   Created: 2025/02/21 12:58:44 by aramos            #+#    #+#             */
+/*   Updated: 2025/02/21 12:58:46 by aramos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include "libft.h"
+
+int	ft_print_memory(void *addr)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
+	int				counter;
+	unsigned long	address_in_dec;
+
+	counter = 0;
+	address_in_dec = (unsigned long) addr;
+	if (addr == NULL)
+		return (ft_putstr_fd(("(nil)"), 1));
+	counter += ft_putstr_fd("0x", 1);
+	counter += ft_print_hex_normal(address_in_dec, 0);
+	return (counter);
 }
-//
-//int main(void)
-//{
-//	printf("%d", ft_isascii(3126));
-//	return(0);
-//}

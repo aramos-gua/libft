@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_putunbr_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aramos <alejandro.ramos.gua@gmail.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/21 12:55:43 by aramos            #+#    #+#             */
-/*   Updated: 2025/02/21 12:55:45 by aramos           ###   ########.fr       */
+/*   Created: 2025/02/21 12:59:22 by aramos            #+#    #+#             */
+/*   Updated: 2025/02/21 12:59:23 by aramos           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+#include "libft.h"
+
+int	ft_putunbr_fd(unsigned int n, int fd)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
+	int	count;
+
+	count = 0;
+	if (n > 9)
+		count += ft_putnbr_fd(n / 10, fd);
+	ft_putchar_fd(n % 10 + '0', fd);
+	count++;
+	return (count);
 }
-//
-//int main(void)
+
+//int	main(void)
 //{
-//	printf("%d", ft_isascii(3126));
-//	return(0);
+//	ft_putnbr_fd(-2147483648LL, 1);
 //}
