@@ -82,7 +82,8 @@ SRC = \
 	get_next_line_arrays/get_next_line_bonus.c\
 	get_next_line_arrays/get_next_line_utils_bonus.c
 
-OBJ = $(SRC:.c=.o)
+OBJ = $(addprefix $(OBJ_DIR)/,$(SRC:.c=.o))
+OBJ_DIR = build
 CC = cc
 CFLAGS = -Wall -Werror -Wextra -fPIC
 NAME = libft.a
@@ -90,10 +91,10 @@ NAME = libft.a
 # Compile libft
 $(NAME): $(OBJ)
 	@ar rcs $(NAME) $(OBJ)
-	@rm *.o
-	@echo "\n${GREEN} Created {NAME} ${DEF_COLOR}\n"
+	@echo "\n${GREEN} Created $(NAME) ${DEF_COLOR}\n"
 
-%.o: %.c
+$(OBJ_DIR)/%.o: %.c
+	@mkdir -p $(dir $@)
 	@echo "${MAGENTA} ~ ${BROWN} Compiling... ${MAGENTA}-> ${CYAN}$<${DEF_COLOR}"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
@@ -101,10 +102,11 @@ $(NAME): $(OBJ)
 all: $(NAME)
 
 clean:
-	@rm -f $(OBJ)
+	@rm -rf $(OBJ_DIR)
+	@echo "${GREEN} Cleaned $(OBJ_DIR) directory ${DEF_COLOR}"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "${GREEN} Cleaned ${NAME} ${DEF_COLOR}"
+	@echo "${GREEN} Cleaned $(NAME) library ${DEF_COLOR}"
 
 re: fclean all
