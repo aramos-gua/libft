@@ -32,7 +32,7 @@ void	pbonus_di(int n, t_form *format)
 	if (!(format -> flags & FLAG_MINUS))
 		pad_helper(padding, format);
 	if (!(n == 0 && ((format -> width == 0) || (format -> precision == 0))))
-		(format->p_chars) += ft_putstr_fd(str, 1);
+		(format->p_chars) += ft_putstr_fd(str, format->fd);
 	format -> pad = ' ';
 	if (format -> flags & FLAG_MINUS)
 		pad_helper(padding, format);
@@ -73,7 +73,7 @@ static int	pd(int n, int len, t_form *format, char **str)
 	{
 		if (format -> flags & FLAG_ZERO)
 		{
-			(format->p_chars) += ft_putstr_fd(prefix(n, format), 1);
+			(format->p_chars) += ft_putstr_fd(prefix(n, format), format->fd);
 			format -> pad = '0';
 		}
 		else
@@ -105,5 +105,5 @@ static char	*prefix(int n, t_form *format)
 static void	pad_helper(int padding, t_form *format)
 {
 	while (padding--)
-		(format->p_chars) += ft_putchar_fd(format -> pad, 1);
+		(format->p_chars) += ft_putchar_fd(format -> pad, format->fd);
 }

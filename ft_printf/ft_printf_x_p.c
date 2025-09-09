@@ -29,15 +29,15 @@ void	print_hx(unsigned int n, t_form *format, int upp)
 	if (format -> flags & FLAG_HASH && n != 0)
 	{
 		if (upp == 0)
-			(format->p_chars) += ft_putstr_fd("0x", 1);
+			(format->p_chars) += ft_putstr_fd("0x", format->fd);
 		if (upp == 1)
-			(format->p_chars) += ft_putstr_fd("0X", 1);
+			(format->p_chars) += ft_putstr_fd("0X", format->fd);
 		len += 2;
 	}
 	if (!(format -> flags & FLAG_MINUS))
 		hx_padding(len, format);
 	if (!(n == 0 && (format -> width == 0 || format -> precision == 0)))
-		(format->p_chars) += ft_putstr_fd(str, 1);
+		(format->p_chars) += ft_putstr_fd(str, format->fd);
 	if (format -> flags & FLAG_MINUS)
 		hx_padding(len, format);
 	free(str);
@@ -53,7 +53,7 @@ static void	hx_padding(int len, t_form *format)
 	if (format -> flags & FLAG_ZERO)
 		format -> pad = '0';
 	while (padding--)
-		(format->p_chars) += ft_putchar_fd(format -> pad, 1);
+		(format->p_chars) += ft_putchar_fd(format -> pad, format->fd);
 }
 
 //%p specifier
@@ -76,7 +76,7 @@ void	pbonus_p(void *address, t_form *format)
 	len = ft_strlen(str);
 	if (!(format -> flags & FLAG_MINUS))
 		p_padding(len, format);
-	(format->p_chars) += ft_putstr_fd(str, 1);
+	(format->p_chars) += ft_putstr_fd(str, format->fd);
 	if (format -> flags & FLAG_MINUS)
 		p_padding(len, format);
 	free(hex);
@@ -93,5 +93,5 @@ static void	p_padding(int len, t_form *format)
 	if (format -> precision > len)
 		padding = format -> precision - len;
 	while (padding--)
-		(format->p_chars) += ft_putchar_fd(' ', 1);
+		(format->p_chars) += ft_putchar_fd(' ', format->fd);
 }

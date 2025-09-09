@@ -19,6 +19,7 @@
 # include <limits.h>
 # include <stddef.h>
 # include <unistd.h>
+# include "./ft_printf/ft_printf.h"
 
 typedef struct s_list
 {
@@ -74,6 +75,7 @@ int		ft_putunbr_fd(unsigned int n, int fd);
 int		ft_print_memory(void *addr);
 int		ft_print_hex(unsigned long number, int upp);
 int		ft_printf(const char *str, ...);
+int		ft_dprintf(int fd, const char *str, ...);
 char	*get_next_line(int fd);
 char	*get_next_line_bonus(int fd);
 

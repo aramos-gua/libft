@@ -32,6 +32,7 @@ int	ft_printf(const char *str, ...)
 	t_form		format;
 
 	format.p_chars = 0;
+	format.fd = STDOUT_FILENO;
 	va_start(args, str);
 	while (*str)
 	{
@@ -42,7 +43,7 @@ int	ft_printf(const char *str, ...)
 		}
 		else
 		{
-			ft_putchar_fd(*str, 1);
+			ft_putchar_fd(*str, format.fd);
 			format.p_chars++;
 		}
 		str++;
@@ -50,6 +51,29 @@ int	ft_printf(const char *str, ...)
 	va_end(args);
 	return (format.p_chars);
 }
-//	current_p_chars = format -> p_chars;
-//	*format = (t_form){' ', 0, -1, -1, 0, 0};
-//	format -> p_chars = current_p_chars;
+
+int	ft_dprintf(int fd, const char *str, ...)
+{
+	va_list		args;
+	t_form		format;
+
+	format.p_chars = 0;
+	format.fd = fd;
+	va_start(args, str);
+	while (*str)
+	{
+		if (*str == '%')
+		{
+			str++;
+			bs(&str, &format, args);
+		}
+		else
+		{
+			ft_putchar_fd(*str, format.fd);
+			format.p_chars++;
+		}
+		str++;
+	}
+	va_end(args);
+	return (format.p_chars);
+}

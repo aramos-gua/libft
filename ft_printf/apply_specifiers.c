@@ -76,7 +76,7 @@ static void	apply_next_1(t_form *format, va_list args)
 		print_hx(number, format, 1);
 	}
 	else if (format -> f_specifier == '%')
-		format->p_chars += ft_putchar_fd('%', 1);
+		format->p_chars += ft_putchar_fd('%', format->fd);
 }
 
 static void	change_flags(t_form *format)

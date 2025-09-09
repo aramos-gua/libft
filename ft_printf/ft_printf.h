@@ -10,19 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include "../libft.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
+# include <stdarg.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include "../libft.h"
 
-#define FLAG_MINUS	1//00000001
-#define FLAG_ZERO	2//00000010
-#define FLAG_HASH	4//00000100
-#define FLAG_PLUS	8//00001000
-#define FLAG_SPACE	16//0010000
+# define FLAG_MINUS	1//00000001
+# define FLAG_ZERO	2//00000010
+# define FLAG_HASH	4//00000100
+# define FLAG_PLUS	8//00001000
+# define FLAG_SPACE	16//0010000
 
 typedef struct s_format
 {
+  int     fd;
 	char		pad;
 	int			flags;
 	int			width;
@@ -32,6 +35,7 @@ typedef struct s_format
 }	t_form;
 
 int		ft_printf(const char *str, ...);
+int		ft_dprintf(int fd, const char *str, ...);
 void	bs(const char **str, t_form *format, va_list args);
 void	parse_flags(const char **str, t_form *format);
 void	parse_width(const char **str, t_form *format, va_list args);
@@ -45,3 +49,4 @@ void	pbonus_u(unsigned int n, t_form *format);
 void	print_hx(unsigned int n, t_form *format, int upp);
 void	pbonus_p(void *address, t_form *format);
 int		append_0(char **str, t_form *format);
+#endif
