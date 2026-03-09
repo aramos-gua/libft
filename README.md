@@ -1,5 +1,9 @@
 *This project has been created as part of the 42 curriculum by aramos.*
 
+<p align="center">
+  <img src="media/libftm.png" alt="libft badge" width="150"/>
+</p>
+
 # libft
 
 ## Description
